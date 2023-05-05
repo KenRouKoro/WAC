@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-337301605/WACFabric.WACCommon.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-337301605/WACFabric.WACCommon.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WACForge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/WACForge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-337301605/WACIgnite.WACCommon.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-337301605/WACIgnite.WACCommon.main.iml" />
+    </modules>
+  </component>
+</project>

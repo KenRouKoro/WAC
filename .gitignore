@@ -1,0 +1,11 @@
+# 项目排除路径
+/.gradle/
+/build/
+/WACCommon/.gradle/
+/WACCommon/build/
+/WACCommon/build/classes/java/main/
+/WACFabric/.gradle/
+/WACFabric/build/
+/WACForge/.gradle/
+/WACForge/build/
+/WACForge/build/classes/java/main/

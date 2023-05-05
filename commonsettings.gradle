@@ -1,0 +1,4 @@
+ext{
+    HutoolCoreVersion = '1.1.0'
+    ProjectVersion = '1.1.0'
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "wacfabric",
+  "version": "${version}",
+  "name": "WACFabric",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/Koro/WACFabric"
+  },
+  "license": "LGPL-3.0",
+  "icon": "wac.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "cn.korostudio.mc.wac.wacfabric.WACFabric"
+    ]
+  },
+  "mixins": [
+    "WACFabric.mixins.json"
+  ],
+  "accessWidener" : "wacfabric.accesswidener",
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": ">=${minecraft_version}"
+  }
+}

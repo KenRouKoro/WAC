@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cn.korostudio.mc.wac.wacforge.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "wacforge.refmap.json",
+  "mixins": [
+    "MixinLevel",
+    "MixinReference"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

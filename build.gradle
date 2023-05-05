@@ -1,0 +1,128 @@
+plugins {
+    id 'java'
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+}
+
+apply from:'commonsettings.gradle'
+
+group 'cn.korostudio.mc.wac'
+
+version  = ProjectVersion
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+import java.nio.file.Files
+import java.nio.file.Paths
+
+tasks.register('mergeManifests') {
+    doFirst {
+        // 清空 external 目录
+        delete "$buildDir/external"
+    }
+    doLast {
+        def forgeManifest = "$buildDir/external/Forge/META-INF/MANIFEST.MF"
+        def fabricManifest = "$buildDir/external/Fabric/META-INF/MANIFEST.MF"
+        def igniteManifest = "$buildDir/external/Ignite/META-INF/MANIFEST.MF"
+        def commonManifest = "$buildDir/external/Common/META-INF/MANIFEST.MF"
+        def mergedManifest = "$buildDir/external/META-INF/MANIFEST.MF"
+
+        copy {
+            from(zipTree("WACForge/build/libs/WACForge-${version}.jar")) {
+                include 'META-INF/MANIFEST.MF'
+            }
+            into("$buildDir/external/Forge")
+        }
+        copy {
+            from(zipTree("WACFabric/build/libs/WACFabric-${version}.jar")) {
+                include 'META-INF/MANIFEST.MF'
+            }
+            into("$buildDir/external/Fabric")
+        }
+        copy {
+            from(zipTree("WACIgnite/build/libs/wacignite-${version}.jar")) {
+                include 'META-INF/MANIFEST.MF'
+            }
+            into("$buildDir/external/Ignite")
+        }
+        copy {
+            from(zipTree("WACCommon/build/libs/WACCommon-${version}.jar")) {
+                include 'META-INF/MANIFEST.MF'
+            }
+            into("$buildDir/external/Common")
+        }
+
+        // 读取所有 MANIFEST.MF 文件的内容
+        def forgeLines = Files.readAllLines(Paths.get(forgeManifest))
+        def igniteLines = Files.readAllLines(Paths.get(igniteManifest))
+        def fabricLines = Files.readAllLines(Paths.get(fabricManifest))
+        def commonLines = Files.readAllLines(Paths.get(commonManifest))
+
+        // 合并多个 MANIFEST.MF 文件的内容，去掉重复行并在合适的地方换行
+        def manifestContent = new LinkedHashSet<>()
+        manifestContent.addAll(forgeLines)
+        manifestContent.addAll(fabricLines)
+        manifestContent.addAll(igniteLines)
+        manifestContent.addAll(commonLines)
+
+        // 将合并后的内容写入新的 MANIFEST.MF 文件，并在文件末尾添加换行符
+        Files.createDirectories(Paths.get("$buildDir/external/META-INF"))
+        def manifestContentWithoutEmptyLines = manifestContent.findAll { it != "" }
+        Files.write(Paths.get(mergedManifest), (manifestContentWithoutEmptyLines.join("\n") + "\n").getBytes())
+
+        // 提取 Forge、Fabric、Paper 文件夹内除了 META-INF/MANIFEST.MF 之外的其他内容
+        copy {
+            from(zipTree("WACForge/build/libs/WACForge-${version}.jar")) {
+                exclude 'META-INF/MANIFEST.MF'
+            }
+            into("$buildDir/external")
+        }
+        copy {
+            from(zipTree("WACFabric/build/libs/WACFabric-${version}.jar")) {
+                exclude 'META-INF/MANIFEST.MF'
+            }
+            into("$buildDir/external")
+        }
+        copy {
+            from(zipTree("WACIgnite/build/libs/wacignite-${version}.jar")) {
+                exclude 'META-INF/MANIFEST.MF'
+            }
+            into("$buildDir/external")
+        }
+        copy {
+            from(zipTree("WACCommon/build/libs/WACCommon-${version}.jar")) {
+                exclude 'META-INF/MANIFEST.MF'
+            }
+            into("$buildDir/external")
+        }
+    }
+}
+shadowJar {
+    dependsOn(mergeManifests)
+    from("$buildDir/external")
+    exclude("Forge/**")
+    exclude("Fabric/**")
+    exclude("Common/**")
+    exclude("Ignite/**")
+    manifest {
+        from("$buildDir/external/META-INF/MANIFEST.MF")
+    }
+    dependencies {
+        // 排除其他依赖
+        exclude(dependency('org.junit.jupiter:junit-jupiter-api'))
+        exclude(dependency('org.junit.jupiter:junit-jupiter-engine'))
+    }
+    archiveFileName.set("WAC-${ProjectVersion}-For-Forge-Fabric-Ignite.jar")
+}

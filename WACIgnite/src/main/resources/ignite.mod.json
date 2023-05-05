@@ -1,0 +1,12 @@
+{
+  "id": "wacignite",
+  "version": "1.1.0",
+  "entry": "cn.korostudio.mc.wac.wacignite.WACIgnite",
+  "dependencies": [
+    "ignite"
+  ],
+  "mixins": [
+    "mixins.wacignite.core.json"
+  ],
+  "access_wideners" : ["wacignite.accesswidener"]
+}

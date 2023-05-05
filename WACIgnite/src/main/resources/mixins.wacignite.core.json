@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "cn.korostudio.mc.wac.wacignite.mixin",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_11",
+  "server": [
+    "MixinLevel",
+    "MixinReference"
+  ]
+}
