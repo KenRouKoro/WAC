@@ -1,6 +1,7 @@
 package cn.korostudio.mc.wac.wacignite.mixin;
 
 import net.minecraft.core.Holder;
+import org.bukkit.Bukkit;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
