@@ -1,5 +1,6 @@
 # WAC World Altitude Control 世界高度控制
-> 这个mod不能解决高度不能超过mc数据结构限制的问题，因为这会摧毁兼容性！    
+> 这个mod不能解决高度不能超过mc数据结构限制的问题，因为这会摧毁兼容性！
+> 
 
 这个Mod用于控制Minecraft维度高度，可在配置文件或在HutoolCore的Web编辑器中进行配置。
 

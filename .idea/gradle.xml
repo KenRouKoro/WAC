@@ -68,6 +68,17 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/WACPaper" />
+        <option name="gradleHome" value="C:/Program Files/gradle/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/WACCommon" />
+            <option value="$PROJECT_DIR$/WACPaper" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>

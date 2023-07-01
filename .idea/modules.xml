@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WACCommon.main.iml" filepath="$PROJECT_DIR$/.idea/modules/WACCommon.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-337301605/WACFabric.WACCommon.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-337301605/WACFabric.WACCommon.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WACFabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/WACFabric.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WACFabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/WACFabric.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-337301605/WACForge.WACCommon.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-337301605/WACForge.WACCommon.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/WACForge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/WACForge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WACForge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/WACForge.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-337301605/WACIgnite.WACCommon.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-337301605/WACIgnite.WACCommon.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WACIgnite.main.iml" filepath="$PROJECT_DIR$/.idea/modules/WACIgnite.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WACIgnite.test.iml" filepath="$PROJECT_DIR$/.idea/modules/WACIgnite.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-337301605/WACPaper.WACCommon.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-337301605/WACPaper.WACCommon.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WACPaper.main.iml" filepath="$PROJECT_DIR$/.idea/modules/WACPaper.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WACPaper.test.iml" filepath="$PROJECT_DIR$/.idea/modules/WACPaper.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-337301605/cn.korostudio.mc.wac.WACFabric.WACCommon.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-337301605/cn.korostudio.mc.wac.WACFabric.WACCommon.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.korostudio.mc.wac.WACForge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.korostudio.mc.wac.WACForge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-337301605/cn.korostudio.mc.wac.WACIgnite.WACCommon.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-337301605/cn.korostudio.mc.wac.WACIgnite.WACCommon.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-337301605/cn.korostudio.mc.wac.WACPaper.WACCommon.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-337301605/cn.korostudio.mc.wac.WACPaper.WACCommon.main.iml" />
     </modules>
   </component>
 </project>

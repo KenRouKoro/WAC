@@ -1,6 +1,7 @@
 package cn.korostudio.mc.wac.common;
 
-import cn.korostudio.mc.hutoolcore.common.config.ConfigUtil;
+import cn.korostudio.mc.hutoolcore.common.config.JSONConfigUtil;
+import cn.korostudio.mc.hutoolcore.common.config.TOMLConfigUtil;
 import cn.korostudio.mc.wac.common.config.WACConfig;
 import cn.korostudio.mc.wac.common.config.WorldConfig;
 import lombok.Getter;
@@ -17,7 +18,7 @@ public class WAC {
         } catch (ClassNotFoundException e) {
             log.error("警告，未检测到HutoolCore！",e);
         }
-        config = ConfigUtil.getInstance("WACConfig",WACConfig.class);
+        config = JSONConfigUtil.getInstance("WACConfig",WACConfig.class);
     }
 
     public static WorldConfig getInstance(String id){
@@ -29,7 +30,7 @@ public class WAC {
             WorldConfig worldConfig = new WorldConfig();
             worldConfig.setId(id);
             config.getWorldConfigs().put(id,worldConfig);
-            ConfigUtil.save("WACConfig");
+            JSONConfigUtil.save("WACConfig");
             log.info("配置文件如下：{} 可在{}中编辑配置文件，当前版本需要重启生效",worldConfig,System.getProperty("user.dir")+"/config/WACConfig.json");
             return worldConfig;
         }

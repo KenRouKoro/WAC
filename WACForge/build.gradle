@@ -145,6 +145,7 @@ repositories {
     //     dir 'libs'
     // }
     mavenLocal()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
