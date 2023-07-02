@@ -1,6 +1,6 @@
 {
   "id": "wacignite",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "entry": "cn.korostudio.mc.wac.wacignite.WACIgnite",
   "dependencies": [
     "ignite"

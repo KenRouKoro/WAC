@@ -36,6 +36,7 @@ tasks.register('mergeManifests') {
         def forgeManifest = "$buildDir/external/Forge/META-INF/MANIFEST.MF"
         def fabricManifest = "$buildDir/external/Fabric/META-INF/MANIFEST.MF"
         def igniteManifest = "$buildDir/external/Ignite/META-INF/MANIFEST.MF"
+        def paperManifest = "$buildDir/external/Paper/META-INF/MANIFEST.MF"
         def commonManifest = "$buildDir/external/Common/META-INF/MANIFEST.MF"
         def mergedManifest = "$buildDir/external/META-INF/MANIFEST.MF"
 
@@ -58,6 +59,12 @@ tasks.register('mergeManifests') {
             into("$buildDir/external/Ignite")
         }
         copy {
+            from(zipTree("WACPaper/build/libs/WACPaper-${version}.jar")) {
+                include 'META-INF/MANIFEST.MF'
+            }
+            into("$buildDir/external/Paper")
+        }
+        copy {
             from(zipTree("WACCommon/build/libs/WACCommon-${version}.jar")) {
                 include 'META-INF/MANIFEST.MF'
             }
@@ -68,6 +75,7 @@ tasks.register('mergeManifests') {
         def forgeLines = Files.readAllLines(Paths.get(forgeManifest))
         def igniteLines = Files.readAllLines(Paths.get(igniteManifest))
         def fabricLines = Files.readAllLines(Paths.get(fabricManifest))
+        def paperLines = Files.readAllLines(Paths.get(paperManifest))
         def commonLines = Files.readAllLines(Paths.get(commonManifest))
 
         // 合并多个 MANIFEST.MF 文件的内容，去掉重复行并在合适的地方换行
@@ -75,6 +83,7 @@ tasks.register('mergeManifests') {
         manifestContent.addAll(forgeLines)
         manifestContent.addAll(fabricLines)
         manifestContent.addAll(igniteLines)
+        manifestContent.addAll(paperLines)
         manifestContent.addAll(commonLines)
 
         // 将合并后的内容写入新的 MANIFEST.MF 文件，并在文件末尾添加换行符
@@ -102,6 +111,12 @@ tasks.register('mergeManifests') {
             into("$buildDir/external")
         }
         copy {
+            from(zipTree("WACPaper/build/libs/WACPaper-${version}.jar")) {
+                exclude 'META-INF/MANIFEST.MF'
+            }
+            into("$buildDir/external")
+        }
+        copy {
             from(zipTree("WACCommon/build/libs/WACCommon-${version}.jar")) {
                 exclude 'META-INF/MANIFEST.MF'
             }
@@ -116,6 +131,7 @@ shadowJar {
     exclude("Fabric/**")
     exclude("Common/**")
     exclude("Ignite/**")
+    exclude("Paper/**")
     manifest {
         from("$buildDir/external/META-INF/MANIFEST.MF")
     }
@@ -124,5 +140,5 @@ shadowJar {
         exclude(dependency('org.junit.jupiter:junit-jupiter-api'))
         exclude(dependency('org.junit.jupiter:junit-jupiter-engine'))
     }
-    archiveFileName.set("WAC-${ProjectVersion}-For-Forge-Fabric-Ignite.jar")
+    archiveFileName.set("WAC-${ProjectVersion}-For-Forge-Fabric-Ignite-Paper.jar")
 }

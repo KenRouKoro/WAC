@@ -7,8 +7,8 @@
         <processorPath useClasspath="false">
           <entry name="C:/Program Files/gradle/gradle-7.6/jars/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
         </processorPath>
-        <module name="cn.korostudio.mc.wac.WACIgnite.WACCommon.main" />
-        <module name="WACIgnite.WACCommon.test" />
+        <module name="cn.korostudio.mc.wac.WACFabric.WACCommon.main" />
+        <module name="WACFabric.WACCommon.test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
