@@ -7,15 +7,8 @@
         <processorPath useClasspath="false">
           <entry name="C:/Program Files/gradle/gradle-7.6/jars/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
         </processorPath>
-        <module name="WACForge.WACCommon.test" />
-        <module name="WACForge.WACCommon.main" />
-      </profile>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="C:/Program Files/gradle/gradle-7.6/jars/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/6d1c8bf4c28e697f472a83bd6add76ec4951734/mixin-0.8.5-processor.jar" />
-        </processorPath>
-        <module name="cn.korostudio.mc.wac.WACForge.main" />
+        <module name="cn.korostudio.mc.wac.WACIgnite.WACCommon.main" />
+        <module name="WACIgnite.WACCommon.test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />

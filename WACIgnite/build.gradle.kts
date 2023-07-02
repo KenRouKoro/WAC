@@ -18,7 +18,7 @@ dependencies {
     implementation(libs.ignite)
     implementation(libs.mixin)
 
-    paperweight.paperDevBundle("1.19.3-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.20.1-R0.1-SNAPSHOT")
     implementation(project(":WACCommon"))
     implementation("cn.hutool:hutool-all:5.8.16")
 }
